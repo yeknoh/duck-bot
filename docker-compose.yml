@@ -1,0 +1,11 @@
+services:
+  duck-bot:
+    build: .
+    container_name: duck-bot
+    restart: unless-stopped
+    volumes:
+      - /srv/media/ducks:/app/ducks
+    environment:
+      - DTOKEN=${DTOKEN}
+      - ALLOWED_USER_ID=${ALLOWED_USER_ID}
+      - PYTHONUNBUFFERED=1
